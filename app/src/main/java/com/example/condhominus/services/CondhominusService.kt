@@ -1,10 +1,10 @@
 package com.example.condhominus.services
 
-import com.example.condhominus.model.schedule.AvailableSchedulesResponse
 import com.example.condhominus.model.address.AddressResponse
 import com.example.condhominus.model.condominium.CondominiumResponse
 import com.example.condhominus.model.condominium.CondominiumsListResponse
 import com.example.condhominus.model.login.LoginResponse
+import com.example.condhominus.model.schedule.AvailableSchedulesResponse
 import com.example.condhominus.model.schedule.ScheduleResponse
 import com.example.condhominus.model.tenant.TenantResponse
 import okhttp3.RequestBody
@@ -36,4 +36,7 @@ interface CondhominusService {
 
     @POST("/agendamentomudanca/cadastrar")
     suspend fun toSchedule(@Body body: RequestBody): Response<ScheduleResponse>
+
+    @GET("/billet")
+    suspend fun getBillet(): Response<ByteArray>
 }
